@@ -16,12 +16,23 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+/**
+ * Przykładowy kontroler, którego logika łączy się z bazą Azure SQL Database i pobiera przykładowe dane z tabeli
+ */
 @RestController
 public class CustomRestController {
 
+    /**
+     * Ciąg połączenia do bazy pobrany z portalu Azure
+     */
     @Value( "${jdbc.url}" )
     private String jdbcUrl;
 
+    /**
+     * Funkcja obsługująca żądanie /greeting. Lączy się ona z bazą danych, pobiera przykładowe dane z tabeli users i zwraca tablicę z obiektami typu User w formacie JSON.
+     *
+     * @return JSON
+     */
     @RequestMapping("/greeting")
     public String greeting() {
         Connection connection = null;
@@ -40,14 +51,12 @@ public class CustomRestController {
                  ResultSet resultSet = statement.executeQuery(selectSql)) {
 
                 // Print results from select statement
-                while (resultSet.next())
-                {
+                while (resultSet.next()) {
                     users.add(new User(resultSet.getString(1), resultSet.getString(2)));
                 }
                 connection.close();
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

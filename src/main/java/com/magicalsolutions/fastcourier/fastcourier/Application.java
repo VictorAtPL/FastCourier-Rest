@@ -3,6 +3,9 @@ package com.magicalsolutions.fastcourier.fastcourier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Główna klasa aplikacji, która odpowiada za uruchomienie frameworka Spring.
+ */
 @SpringBootApplication
 public class Application {
 
