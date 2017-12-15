@@ -1,4 +1,4 @@
-package com.magicalsolutions.fastcourier.fastcourier;
+package com.magicalsolutions.fastcourier;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
