@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Table(name = "uzytkownicy")
@@ -62,6 +63,9 @@ public class Uzytkownik implements Serializable {
     @Column(name = "numer_telefonu")
     @NotEmpty
     private String numerTelefonu;
+
+    @OneToMany(mappedBy="zgloszonyUzytkownik")
+    private Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika;
 
     @PrePersist
     public void prePersist() {
@@ -156,5 +160,13 @@ public class Uzytkownik implements Serializable {
 
     public void setNumerTelefonu(String numerTelefonu) {
         this.numerTelefonu = numerTelefonu;
+    }
+
+    public Set<ZgloszenieUzytkownika> getZgloszeniaUzytkownika() {
+        return zgloszeniaUzytkownika;
+    }
+
+    public void setZgloszeniaUzytkownika(Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika) {
+        this.zgloszeniaUzytkownika = zgloszeniaUzytkownika;
     }
 }
