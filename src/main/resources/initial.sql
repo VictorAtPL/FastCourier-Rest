@@ -1,0 +1,1 @@
+INSERT INTO uzytkownicy VALUES ('p.podbielski@gmail.com', 'pass', 'Piotr', 'Podbielski', 'ROLE_ADMIN');
