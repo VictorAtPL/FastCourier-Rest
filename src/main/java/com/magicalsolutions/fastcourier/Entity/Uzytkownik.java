@@ -1,24 +1,23 @@
 package com.magicalsolutions.fastcourier.Entity;
 
-import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.Date;
 
-/**
- * Entity dla przykładowego obiektu bazodanowego User
- */
 @Entity
 @Table(name = "uzytkownicy")
-@Data
 public class Uzytkownik implements Serializable {
 
     @Id
+    @Column(name = "login")
+    @NotEmpty
+    private String login;
+
     @Column(name = "email")
+    @NotEmpty
     private String email;
 
     /**
@@ -42,4 +41,120 @@ public class Uzytkownik implements Serializable {
     @Column(name = "haslo")
     @NotEmpty
     private String haslo;
+
+    @Column(name = "data_urodzenia")
+    @NotNull
+    @Temporal(TemporalType.DATE)
+    private Date dataUrodzenia;
+
+    @Column
+    @NotEmpty
+    private String wojewodztwo;
+
+    @Column
+    @NotEmpty
+    private String miejscowosc;
+
+    @Column(name = "ulica")
+    @NotEmpty
+    private String ulica;
+
+    @Column(name = "numer_telefonu")
+    @NotEmpty
+    private String numerTelefonu;
+
+    @PrePersist
+    public void prePersist() {
+        if (getRola() == null) {
+            setRola("ROLE_USER");
+        }
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getImie() {
+        return imie;
+    }
+
+    public void setImie(String imie) {
+        this.imie = imie;
+    }
+
+    public String getNazwisko() {
+        return nazwisko;
+    }
+
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public String getRola() {
+        return rola;
+    }
+
+    public void setRola(String rola) {
+        this.rola = rola;
+    }
+
+    public String getHaslo() {
+        return haslo;
+    }
+
+    public void setHaslo(String haslo) {
+        this.haslo = haslo;
+    }
+
+    public Date getDataUrodzenia() {
+        return dataUrodzenia;
+    }
+
+    public void setDataUrodzenia(Date dataUrodzenia) {
+        this.dataUrodzenia = dataUrodzenia;
+    }
+
+    public String getWojewodztwo() {
+        return wojewodztwo;
+    }
+
+    public void setWojewodztwo(String wojewodztwo) {
+        this.wojewodztwo = wojewodztwo;
+    }
+
+    public String getMiejscowosc() {
+        return miejscowosc;
+    }
+
+    public void setMiejscowosc(String miejscowosc) {
+        this.miejscowosc = miejscowosc;
+    }
+
+    public String getUlica() {
+        return ulica;
+    }
+
+    public void setUlica(String ulica) {
+        this.ulica = ulica;
+    }
+
+    public String getNumerTelefonu() {
+        return numerTelefonu;
+    }
+
+    public void setNumerTelefonu(String numerTelefonu) {
+        this.numerTelefonu = numerTelefonu;
+    }
 }
