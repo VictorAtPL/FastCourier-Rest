@@ -67,6 +67,9 @@ public class Uzytkownik implements Serializable {
     @OneToMany(mappedBy="zgloszonyUzytkownik")
     private Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika;
 
+    @OneToMany(mappedBy="ofertaUzytkownika")
+    private Set<Oferta> oferty;
+
     @PrePersist
     public void prePersist() {
         if (getRola() == null) {
@@ -168,5 +171,13 @@ public class Uzytkownik implements Serializable {
 
     public void setZgloszeniaUzytkownika(Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika) {
         this.zgloszeniaUzytkownika = zgloszeniaUzytkownika;
+    }
+
+    public Set<Oferta> getOferty() {
+        return oferty;
+    }
+
+    public void setOferty(Set<Oferta> oferty) {
+        this.oferty = oferty;
     }
 }
