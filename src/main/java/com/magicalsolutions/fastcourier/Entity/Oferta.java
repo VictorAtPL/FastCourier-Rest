@@ -7,6 +7,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
+import java.util.Set;
 
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -75,6 +76,9 @@ public class Oferta {
     @Column(name = "czy_wyroznic")
     @NotNull
     private Boolean czyWyroznic;
+
+    @OneToMany(mappedBy="zgloszonaOferta")
+    private Set<ZgloszenieOferty> zgloszeniaOferty;
 
     public Long getId() {
         return id;
@@ -186,5 +190,13 @@ public class Oferta {
 
     public void setCzyWyroznic(Boolean czyWyroznic) {
         this.czyWyroznic = czyWyroznic;
+    }
+
+    public Set<ZgloszenieOferty> getZgloszeniaOferty() {
+        return zgloszeniaOferty;
+    }
+
+    public void setZgloszeniaOferty(Set<ZgloszenieOferty> zgloszeniaOferty) {
+        this.zgloszeniaOferty = zgloszeniaOferty;
     }
 }
