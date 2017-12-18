@@ -67,6 +67,9 @@ public class Uzytkownik implements Serializable {
     @OneToMany(mappedBy="zgloszonyUzytkownik")
     private Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika;
 
+    /**
+     * Tablica przechowująca oferty użytkownika
+     */
     @OneToMany(mappedBy="ofertaUzytkownika")
     private Set<Oferta> oferty;
 
@@ -173,10 +176,18 @@ public class Uzytkownik implements Serializable {
         this.zgloszeniaUzytkownika = zgloszeniaUzytkownika;
     }
 
+    /**
+     * Metoda zwracająca oferty użytkownika
+     * @return oferty użytkownika
+     */
     public Set<Oferta> getOferty() {
         return oferty;
     }
 
+    /**
+     * Metoda zmieniająca oferty użytkownika
+     * @param oferty Oferty użytkownika
+     */
     public void setOferty(Set<Oferta> oferty) {
         this.oferty = oferty;
     }
