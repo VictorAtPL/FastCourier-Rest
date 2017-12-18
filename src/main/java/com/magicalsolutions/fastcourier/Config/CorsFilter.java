@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Klasa pozwala na to, aby żądania do rest były możliwe z innego adresu i portu niż aplikacji rest
+ */
 @Component
 public class CorsFilter extends OncePerRequestFilter {
 
