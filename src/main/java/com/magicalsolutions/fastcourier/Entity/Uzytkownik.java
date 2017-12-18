@@ -98,6 +98,9 @@ public class Uzytkownik implements Serializable {
     @NotEmpty
     private String numerTelefonu;
 
+    /**
+     *
+     */
     @OneToMany(mappedBy="zgloszonyUzytkownik")
     private Set<ZgloszenieUzytkownika> zgloszeniaUzytkownika;
 
