@@ -17,6 +17,13 @@ import java.util.Set;
  * @license Creative Commons Attribution NonCommercial (CC-BY-NC)
  */
 @Projection(name="verbose", types=Oferta.class)
+/**
+ * Zdefiniowanie projekcji modelu Oferty w endpointcie REST
+ * @author Michał Pruchniewski
+ * @since 0.0.3
+ * @copyright Magical Solutions
+ * @licence Creative Commons Attribution NonCommercial (CC-BY-NC)
+ */
 public interface OfertaProjection {
     /**
      *
