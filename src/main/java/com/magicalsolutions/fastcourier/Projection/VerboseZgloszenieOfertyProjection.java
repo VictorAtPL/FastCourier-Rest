@@ -3,6 +3,7 @@ package com.magicalsolutions.fastcourier.Projection;
 import com.magicalsolutions.fastcourier.Entity.ZgloszenieOferty;
 import org.springframework.data.rest.core.config.Projection;
 
+import java.util.Date;
 import java.util.Set;
 
 @Projection(name="verbose", types=ZgloszenieOferty.class)
@@ -14,7 +15,10 @@ import java.util.Set;
  * @licence Creative Commons Attribution NonCommercial (CC-BY-NC)
  */
 public interface VerboseZgloszenieOfertyProjection {
+    Integer getId();
     String getPowod();
     String getTresc();
+    Date getDataDodania();
+    Boolean getPrzeczytane();
     Set<OfertaProjection> getZgloszonaOferta();
 }

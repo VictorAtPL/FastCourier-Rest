@@ -5,8 +5,8 @@ INSERT INTO oferty(cena_maksymalna, cena_minimalna, czy_wyroznic, data_wyjazdu, 
 
 INSERT INTO oferty (cena_maksymalna, cena_minimalna, czy_wyroznic, data_wyjazdu, godzina_wyjazdu, kategorie_paczek, maksymalna_waga_paczki, miasto_docelowe, miasto_poczatkowe, opis, rozmiary_paczek, tytul, uzytkownik_id) VALUES (25, 15, 0, '2017-12-21 00:00:00.000', '1970-01-01 15:00:00.000', 'zywnosc,szklo,zwierzeta,rosliny', 25, 'Warszawa', 'Kraków', 'Szybkie przejazdy z KRK do WWY samochodem marki Mercedes-Benz.', 'mala,srednia,duza', 'Szybkie przejazdy z KRK do WWY', 'marcinexxx');
 
-INSERT INTO zgloszenia_oferty(powod, tresc, oferta_id) VALUES ('Inny', 'Przykładowa treść', SCOPE_IDENTITY());
+INSERT INTO zgloszenia_oferty(data_dodania, powod, przeczytane, tresc, oferta_id) VALUES ('2017-12-18 14:00:00.000', 'Inny', 0, 'Przykładowa treść', SCOPE_IDENTITY());
 
-INSERT INTO zgloszenia_uzytkownikow(powod, tresc, uzytkownik_id) VALUES ('Inny', 'Przykładowa treść', 'marcinexxx');
+INSERT INTO zgloszenia_uzytkownikow(data_dodania, powod, przeczytane, tresc, uzytkownik_id) VALUES ('2017-12-18 14:00:00.000', 'Inny', 0, 'Przykładowa treść', 'marcinexxx');
 
 INSERT INTO uwagi(powod, tresc) VALUES ('Przykładowy powód', 'Przykładowa treść');
