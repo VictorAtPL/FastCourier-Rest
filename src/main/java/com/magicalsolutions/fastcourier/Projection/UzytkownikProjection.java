@@ -9,4 +9,6 @@ import org.springframework.data.rest.core.config.Projection;
 @Projection(name="verbose", types=Uzytkownik.class)
 public interface UzytkownikProjection {
     String getLogin();
+    String getRola();
+    Boolean getZablokowany();
 }

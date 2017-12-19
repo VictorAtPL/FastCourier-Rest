@@ -98,6 +98,10 @@ public class Uzytkownik implements Serializable {
     @NotEmpty
     private String numerTelefonu;
 
+    @Column(name = "zablokowany")
+    @NotNull
+    private Boolean zablokowany;
+
     /**
      *
      */
@@ -118,6 +122,8 @@ public class Uzytkownik implements Serializable {
         if (getRola() == null) {
             setRola("ROLE_USER");
         }
+
+        setZablokowany(false);
     }
 
     /**
@@ -317,5 +323,13 @@ public class Uzytkownik implements Serializable {
      */
     public void setOferty(Set<Oferta> oferty) {
         this.oferty = oferty;
+    }
+
+    public Boolean getZablokowany() {
+        return zablokowany;
+    }
+
+    public void setZablokowany(Boolean zablokowany) {
+        this.zablokowany = zablokowany;
     }
 }
