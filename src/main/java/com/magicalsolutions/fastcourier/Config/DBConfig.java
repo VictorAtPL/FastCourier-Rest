@@ -65,6 +65,9 @@ public class DBConfig {
         properties.put("hibernate.format_sql", env.getProperty("hibernate.format_sql"));
         properties.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
         properties.put("hibernate.hbm2ddl.import_files", env.getProperty("hibernate.hbm2ddl.import_files"));
+        properties.put("hibernate.connection.CharSet", env.getProperty("hibernate.connection.CharSet"));
+        properties.put("hibernate.connection.characterEncoding", env.getProperty("hibernate.connection.characterEncoding"));
+        properties.put("hibernate.connection.useUnicode", env.getProperty("hibernate.connection.useUnicode"));
         return properties;
     }
 }

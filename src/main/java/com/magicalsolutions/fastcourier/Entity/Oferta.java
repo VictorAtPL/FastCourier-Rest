@@ -50,16 +50,16 @@ public class Oferta {
     /**
      * Zmienna przechowująca cenę minimalną
      */
-    @Column(name = "cena_minimalna")
+    @Column(name = "cena_minimalna", precision = 4, scale = 2)
     @NotNull
-    private Integer cenaMinimalna;
+    private Double cenaMinimalna;
 
     /**
      * Zmienna przechowująca cenę maksymalną
      */
-    @Column(name = "cena_maksymalna")
+    @Column(name = "cena_maksymalna", precision = 4, scale = 2)
     @NotNull
-    private Integer cenaMaksymalna;
+    private Double cenaMaksymalna;
 
     /**
      * Zmienna przechowująca miasto początkowe
@@ -181,7 +181,7 @@ public class Oferta {
      * Metoda zwracająca cenę minimalną
      * @return cena minimalna
      */
-    public Integer getCenaMinimalna() {
+    public Double getCenaMinimalna() {
         return cenaMinimalna;
     }
 
@@ -189,7 +189,7 @@ public class Oferta {
      * Metoda zmieniająca cenę minimalną
      * @param cenaMinimalna Cena minimalna
      */
-    public void setCenaMinimalna(Integer cenaMinimalna) {
+    public void setCenaMinimalna(Double cenaMinimalna) {
         this.cenaMinimalna = cenaMinimalna;
     }
 
@@ -197,7 +197,7 @@ public class Oferta {
      * Metoda zwracająca cenę maksymalną
      * @return cena maksymalna
      */
-    public Integer getCenaMaksymalna() {
+    public Double getCenaMaksymalna() {
         return cenaMaksymalna;
     }
 
@@ -205,7 +205,7 @@ public class Oferta {
      * Metoda zmieniająca cenę maksymalną
      * @param cenaMaksymalna Cena maksymalna
      */
-    public void setCenaMaksymalna(Integer cenaMaksymalna) {
+    public void setCenaMaksymalna(Double cenaMaksymalna) {
         this.cenaMaksymalna = cenaMaksymalna;
     }
 

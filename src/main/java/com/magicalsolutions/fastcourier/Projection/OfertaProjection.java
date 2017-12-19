@@ -51,14 +51,14 @@ public interface OfertaProjection {
      * @author Piotr Podbielski
      * @return cena minimalna
      */
-    Integer getCenaMinimalna();
+    Double getCenaMinimalna();
 
     /**
      * Funkcja zwracająca cenę maksymalną
      * @author Piotr Podbielski
      * @return cena maksymalna
      */
-    Integer getCenaMaksymalna();
+    Double getCenaMaksymalna();
 
     /**
      * Funkcja zwracająca miasto początkowe
