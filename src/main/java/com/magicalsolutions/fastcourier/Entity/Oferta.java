@@ -129,6 +129,10 @@ public class Oferta {
     @OneToMany(mappedBy="zgloszonaOferta")
     private Set<ZgloszenieOferty> zgloszeniaOferty;
 
+    @Column(name = "zablokowana")
+    @NotNull
+    private Boolean zablokowana;
+
     /**
      * Metoda zwracająca identyfikator oferty
      * @return id oferty
@@ -359,5 +363,18 @@ public class Oferta {
 
     public void setZgloszeniaOferty(Set<ZgloszenieOferty> zgloszeniaOferty) {
         this.zgloszeniaOferty = zgloszeniaOferty;
+    }
+
+    public Boolean getZablokowana() {
+        return zablokowana;
+    }
+
+    public void setZablokowana(Boolean zablokowana) {
+        this.zablokowana = zablokowana;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.setZablokowana(false);
     }
 }
