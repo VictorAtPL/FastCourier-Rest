@@ -1,5 +1,6 @@
 package com.magicalsolutions.fastcourier.Entity;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -43,6 +44,7 @@ public class ZgloszenieOferty {
      */
     @Column(name="powod")
     @NotEmpty
+    @Length(max = 200)
     private String powod;
 
     /**
@@ -50,6 +52,7 @@ public class ZgloszenieOferty {
      */
     @Column(name="tresc")
     @NotEmpty
+    @Length(min = 40, max = 500)
     private String tresc;
 
     /**
