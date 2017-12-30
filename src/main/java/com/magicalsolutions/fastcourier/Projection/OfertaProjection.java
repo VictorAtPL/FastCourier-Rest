@@ -110,4 +110,6 @@ public interface OfertaProjection {
     Date getGodzinaWyjazdu();
 
     Boolean getZablokowana();
+
+    Boolean getAktywna();
 }

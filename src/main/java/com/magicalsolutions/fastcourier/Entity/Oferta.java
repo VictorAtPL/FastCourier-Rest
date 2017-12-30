@@ -133,6 +133,10 @@ public class Oferta {
     @NotNull
     private Boolean zablokowana;
 
+    @Column(name = "aktywna")
+    @NotNull
+    private Boolean aktywna;
+
     /**
      * Metoda zwracająca identyfikator oferty
      * @return id oferty
@@ -373,8 +377,17 @@ public class Oferta {
         this.zablokowana = zablokowana;
     }
 
+    public Boolean getAktywna() {
+        return aktywna;
+    }
+
+    public void setAktywna(Boolean aktywna) {
+        this.aktywna = aktywna;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.setZablokowana(false);
+        this.setAktywna(true);
     }
 }
