@@ -129,6 +129,9 @@ public class Oferta {
     @OneToMany(mappedBy="zgloszonaOferta")
     private Set<ZgloszenieOferty> zgloszeniaOferty;
 
+    @OneToMany(mappedBy="dotyczyOferty")
+    private Set<ZlecenieTransportu> zleceniaTransportu;
+
     @Column(name = "zablokowana")
     @NotNull
     private Boolean zablokowana;
@@ -383,6 +386,14 @@ public class Oferta {
 
     public void setAktywna(Boolean aktywna) {
         this.aktywna = aktywna;
+    }
+
+    public Set<ZlecenieTransportu> getZleceniaTransportu() {
+        return zleceniaTransportu;
+    }
+
+    public void setZleceniaTransportu(Set<ZlecenieTransportu> zleceniaTransportu) {
+        this.zleceniaTransportu = zleceniaTransportu;
     }
 
     @PrePersist

@@ -114,6 +114,9 @@ public class Uzytkownik implements Serializable {
     @OneToMany(mappedBy="ofertaUzytkownika")
     private Set<Oferta> oferty;
 
+    @OneToMany(mappedBy="powiadomienieUzytkownika")
+    private Set<Powiadomienie> powiadomienia;
+
     /**
      * Metoda wykonywana przed dodaniem obiektu do bazy danych ustawiająca początkową rolę użytkownika
      */
@@ -331,5 +334,13 @@ public class Uzytkownik implements Serializable {
 
     public void setZablokowany(Boolean zablokowany) {
         this.zablokowany = zablokowany;
+    }
+
+    public Set<Powiadomienie> getPowiadomienia() {
+        return powiadomienia;
+    }
+
+    public void setPowiadomienia(Set<Powiadomienie> powiadomienia) {
+        this.powiadomienia = powiadomienia;
     }
 }
