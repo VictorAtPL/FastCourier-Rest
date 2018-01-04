@@ -9,7 +9,7 @@ INSERT INTO oferty (cena_maksymalna, aktywna, cena_minimalna, czy_wyroznic, data
 
 INSERT INTO zlecenia_transportu (data_zlecenia, kategoria_paczki, komentarz, rozmiar_paczki, waga_paczki, oferta_id, uzytkownik_id) VALUES ('2018-12-20 00:00:00.000', 'zwierzęta', '', 'duża', 123, SCOPE_IDENTITY(), 'marcinexxx');
 
-INSERT INTO powiadomienia (data_dodania, id_typu_powiadomienia, przeczytane, typ_powiadomienia, uzytkownik_id) VALUES ('2017-12-21 00:00:00.000', '2', 0, 'ZLECONO_TRANSPORT_PRZESYLKI', 'marcinexxx');
+INSERT INTO powiadomienia (data_dodania, id_typu_powiadomienia, przeczytane, typ_powiadomienia, uzytkownik_id) VALUES ('2017-12-21 00:00:00.000', CONVERT(varchar(255), SCOPE_IDENTITY()), 0, 'ZLECONO_TRANSPORT_PRZESYLKI', 'marcinexxx');
 
 
 INSERT INTO oferty (cena_maksymalna, aktywna, cena_minimalna, czy_wyroznic, data_wyjazdu, godzina_wyjazdu, kategorie_paczek, maksymalna_waga_paczki, miasto_docelowe, miasto_poczatkowe, opis, rozmiary_paczek, tytul, zablokowana, uzytkownik_id) VALUES (25, 1, 15, 0, '2018-12-21 00:00:00.000', '1970-01-01 15:00:00.000', 'żywność,szkło,zwierzęta,rośliny', 25, 'Warszawa', 'Kraków', 'Zablokowana', 'mała,srednia,duża', 'Zablokowana', 1, 'adamexxx');

@@ -46,8 +46,6 @@ public interface OfertaProjection {
      */
     Set<UzytkownikProjection> getOfertaUzytkownika();
 
-    Set<ZlecenieProjection> getZleceniaTransportu();
-
     /**
      * Funkcja zwracająca cenę minimalną
      * @author Piotr Podbielski

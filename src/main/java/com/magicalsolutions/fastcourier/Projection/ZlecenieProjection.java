@@ -13,4 +13,6 @@ public interface ZlecenieProjection {
     String getKategoriaPaczki();
     String getRozmiarPaczki();
     Integer getWagaPaczki();
+
+    OfertaProjection getDotyczyOferty();
 }
