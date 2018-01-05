@@ -102,6 +102,14 @@ public class Uzytkownik implements Serializable {
     @NotNull
     private Boolean zablokowany;
 
+    @Column(name = "suma_ocen")
+    @NotNull
+    private Integer sumaOcen;
+
+    @Column(name = "liczba_ocen")
+    @NotNull
+    private Integer liczbaOcen;
+
     /**
      *
      */
@@ -127,6 +135,8 @@ public class Uzytkownik implements Serializable {
         }
 
         setZablokowany(false);
+        setSumaOcen(0);
+        setLiczbaOcen(0);
     }
 
     /**
@@ -342,5 +352,21 @@ public class Uzytkownik implements Serializable {
 
     public void setPowiadomienia(Set<Powiadomienie> powiadomienia) {
         this.powiadomienia = powiadomienia;
+    }
+
+    public Integer getSumaOcen() {
+        return sumaOcen;
+    }
+
+    public void setSumaOcen(Integer sumaOcen) {
+        this.sumaOcen = sumaOcen;
+    }
+
+    public Integer getLiczbaOcen() {
+        return liczbaOcen;
+    }
+
+    public void setLiczbaOcen(Integer liczbaOcen) {
+        this.liczbaOcen = liczbaOcen;
     }
 }

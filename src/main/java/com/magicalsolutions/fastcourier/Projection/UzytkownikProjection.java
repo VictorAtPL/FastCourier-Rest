@@ -14,4 +14,6 @@ public interface UzytkownikProjection {
     String getRola();
     Boolean getZablokowany();
     Set<PowiadomieniaProjection> getPowiadomienia();
+    Integer getSumaOcen();
+    Integer getLiczbaOcen();
 }
