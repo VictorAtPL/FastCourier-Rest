@@ -1,6 +1,7 @@
 package com.magicalsolutions.fastcourier.Projection;
 
 import com.magicalsolutions.fastcourier.Entity.ZlecenieTransportu;
+import com.magicalsolutions.fastcourier.Enum.StatusZlecenia;
 import org.springframework.data.rest.core.config.Projection;
 
 import java.util.Date;
@@ -13,6 +14,8 @@ public interface ZlecenieProjection {
     String getKategoriaPaczki();
     String getRozmiarPaczki();
     Integer getWagaPaczki();
+    StatusZlecenia getStatusZlecenia();
 
     OfertaProjection getDotyczyOferty();
+    UzytkownikProjection getZlecajacyUzytkownik();
 }

@@ -14,7 +14,7 @@ import java.util.Set;
  * @copyright Magical Solutions
  * @licence Creative Commons Attribution NonCommercial (CC-BY-NC)
  */
-public interface VerboseZgloszenieOfertyProjection {
+public interface ZgloszenieOfertyProjection {
     Integer getId();
     String getPowod();
     String getTresc();

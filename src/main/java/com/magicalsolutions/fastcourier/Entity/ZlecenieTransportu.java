@@ -1,5 +1,6 @@
 package com.magicalsolutions.fastcourier.Entity;
 
+import com.magicalsolutions.fastcourier.Enum.StatusZlecenia;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.rest.core.annotation.RestResource;
@@ -49,6 +50,10 @@ public class ZlecenieTransportu {
     @Column(name = "waga_paczki")
     @NotNull
     private Integer wagaPaczki;
+
+    @Column(name = "status_zlecenia")
+    @Enumerated(EnumType.STRING)
+    private StatusZlecenia statusZlecenia;
 
     public Long getId() {
         return id;
@@ -114,8 +119,17 @@ public class ZlecenieTransportu {
         this.wagaPaczki = wagaPaczki;
     }
 
+    public StatusZlecenia getStatusZlecenia() {
+        return statusZlecenia;
+    }
+
+    public void setStatusZlecenia(StatusZlecenia statusZlecenia) {
+        this.statusZlecenia = statusZlecenia;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.dataZlecenia = new Date();
+        this.statusZlecenia = StatusZlecenia.DO_ROZPATRZENIA;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Set;
  * Zdefiniowanie projekcji zgłoszenia użytkownika w endpoint'cie REST
  */
 @Projection(name="verbose", types=ZgloszenieUzytkownika.class)
-public interface VerboseZgloszenieUzytkownikaProjection {
+public interface ZgloszenieUzytkownikaProjection {
     Integer getId();
     String getPowod();
     String getTresc();
