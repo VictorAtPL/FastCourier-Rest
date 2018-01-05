@@ -4,7 +4,9 @@ import com.magicalsolutions.fastcourier.Entity.Uzytkownik;
 import com.magicalsolutions.fastcourier.Projection.UzytkownikProjection;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin( origins = "*" )
 @RepositoryRestResource(path = "uzytkownicy",  excerptProjection = UzytkownikProjection.class)
 public interface UzytkownikRepository extends CrudRepository<Uzytkownik, String> {
 }
