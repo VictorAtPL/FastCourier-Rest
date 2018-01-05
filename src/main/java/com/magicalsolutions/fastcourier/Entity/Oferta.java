@@ -129,6 +129,17 @@ public class Oferta {
     @OneToMany(mappedBy="zgloszonaOferta")
     private Set<ZgloszenieOferty> zgloszeniaOferty;
 
+    @OneToMany(mappedBy="dotyczyOferty")
+    private Set<ZlecenieTransportu> zleceniaTransportu;
+
+    @Column(name = "zablokowana")
+    @NotNull
+    private Boolean zablokowana;
+
+    @Column(name = "aktywna")
+    @NotNull
+    private Boolean aktywna;
+
     /**
      * Metoda zwracająca identyfikator oferty
      * @return id oferty
@@ -359,5 +370,35 @@ public class Oferta {
 
     public void setZgloszeniaOferty(Set<ZgloszenieOferty> zgloszeniaOferty) {
         this.zgloszeniaOferty = zgloszeniaOferty;
+    }
+
+    public Boolean getZablokowana() {
+        return zablokowana;
+    }
+
+    public void setZablokowana(Boolean zablokowana) {
+        this.zablokowana = zablokowana;
+    }
+
+    public Boolean getAktywna() {
+        return aktywna;
+    }
+
+    public void setAktywna(Boolean aktywna) {
+        this.aktywna = aktywna;
+    }
+
+    public Set<ZlecenieTransportu> getZleceniaTransportu() {
+        return zleceniaTransportu;
+    }
+
+    public void setZleceniaTransportu(Set<ZlecenieTransportu> zleceniaTransportu) {
+        this.zleceniaTransportu = zleceniaTransportu;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.setZablokowana(false);
+        this.setAktywna(true);
     }
 }

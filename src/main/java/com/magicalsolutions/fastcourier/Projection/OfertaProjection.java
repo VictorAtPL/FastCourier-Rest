@@ -108,4 +108,8 @@ public interface OfertaProjection {
      * @return godzina wyjazdu
      */
     Date getGodzinaWyjazdu();
+
+    Boolean getZablokowana();
+
+    Boolean getAktywna();
 }

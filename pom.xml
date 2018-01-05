@@ -9,7 +9,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <start-class>com.magicalsolutions.fastcourier.Application</start-class>
     </properties>
 
     <repositories>
@@ -120,5 +119,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

@@ -1,9 +1,12 @@
 package com.magicalsolutions.fastcourier.Entity;
 
+import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.GenerationType.IDENTITY;
@@ -41,6 +44,7 @@ public class ZgloszenieOferty {
      */
     @Column(name="powod")
     @NotEmpty
+    @Length(max = 200)
     private String powod;
 
     /**
@@ -48,8 +52,23 @@ public class ZgloszenieOferty {
      */
     @Column(name="tresc")
     @NotEmpty
+    @Length(min = 40, max = 500)
     private String tresc;
 
+    /**
+     * Atrybut odpowiedzialny za datę dodania zgłoszenia
+     */
+    @Column(name="data_dodania")
+    @NotNull
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataDodania;
+
+    /**
+     * Atrybut odpowiedzialny za to czy zgłoszenie zostało przeczytane
+     */
+    @Column(name="przeczytane")
+    @NotNull
+    private Boolean przeczytane;
 
     /**
      * Metoda zwracająca id zgloszenia
@@ -105,5 +124,27 @@ public class ZgloszenieOferty {
      */
     public void setTresc(String tresc) {
         this.tresc = tresc;
+    }
+
+    public Date getDataDodania() {
+        return dataDodania;
+    }
+
+    public void setDataDodania(Date dataDodania) {
+        this.dataDodania = dataDodania;
+    }
+
+    public Boolean getPrzeczytane() {
+        return przeczytane;
+    }
+
+    public void setPrzeczytane(Boolean przeczytane) {
+        this.przeczytane = przeczytane;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        this.dataDodania = new Date();
+        this.przeczytane = false;
     }
 }
